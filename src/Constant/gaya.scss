@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;400;500;700&family=Montserrat:wght@400;500;700&display=swap");
+
+$blue-bg: #030343;
+$blue: #4d7cff;
+$blue-secondary: #2d325a;
+$white: #fff;
+
+$opacity-smooth: 0.7;
+$opacity-medium: 0.4;
+
+$archivo: "Archivo", sans-serif;
+$montserrat: "Montserrat", sans-serif;
+
+body {
+  font-family: "Archivo", sans-serif;
+  background-color: $blue-bg;
+  color: $white;
+  // padding-top: 100px;
+}
+
+h2 {
+  font-family: "Archivo", sans-serif;
+}
+
+//scroll
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: $blue;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: $blue;
+}
+
+//custo nav
+.custom-nav {
+  background-color: $blue-bg !important;
+}
+
+.all-text-white {
+  a {
+    color: $white !important;
+  }
+}
+
+//box
+.searchbox {
+  background-color: $blue-secondary;
+  border: 0px solid transparent;
+  font-family: $archivo;
+  // width: 100%;
+}
+
+.card-yugi {
+  background-color: $blue-secondary;
+  padding: 20px 20px;
+  border-radius: 16px;
+}
+
+//kartu
+.btn-custom {
+  background-color: #4d7cff;
+  color: $white;
+  font-family: $montserrat;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 10px 20px;
+}
+
+.kartu-title {
+  font-family: $montserrat;
+  color: $white;
+  font-weight: bold;
+  margin-bottom: 4px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.kartu-desc {
+  font-family: $archivo;
+  color: $white;
+  opacity: $opacity-medium;
+  font-weight: normal;
+}
+
+//detail card
+.detail-card-title {
+  font-family: $montserrat;
+  color: $white;
+  font-weight: bold;
+}
+
+.detail-desc {
+  opacity: $opacity-medium;
+}
+
+.custom-sticky {
+  height: 100px;
+}
+
+.btn-load {
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid $blue;
+  color: $white;
+  font-family: $montserrat;
+  font-weight: bold;
+  padding: 10px 0;
+}
