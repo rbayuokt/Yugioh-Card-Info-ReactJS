@@ -4,7 +4,8 @@
 
 # Yu-Gi-Oh! Card Info V1
 adalah sebuah aplikasi yang menampilkan nama - nama kartu yu-gi-oh! beserta informasinya<br>
-dibuat menggunakan reactjs dan sumber datanya berasal dari [API](https://db.ygoprodeck.com/)
+dibuat menggunakan reactjs dan sumber datanya berasal dari [API](https://db.ygoprodeck.com/)<br>
+ini merupakan aplikasi pertama saya dalam menggunakan reactJS
 
 # Fitur 
 - [x] Zoom Image
