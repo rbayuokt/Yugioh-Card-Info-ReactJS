@@ -12,7 +12,7 @@ function WhatTheFuckIsThis(props) {
                 centered
             >
                 <Modal.Body >
-                <video loop={true} autoPlay="autoplay" controls className="img-fluid">
+                <video loop={true} autoPlay="autoplay" className="img-fluid">
                     <source src="/images/exodia.mp4" type="video/mp4"  className="text-center"/>
                 </video>
                 </Modal.Body>

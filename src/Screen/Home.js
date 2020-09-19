@@ -5,7 +5,7 @@ import ApiServices from '../Services/ApiServices'
 import { Button, Row, Container, Col, Navbar, Form, FormControl, InputGroup } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch, AiFillGithub, AiFillLinkedin, AiFillFacebook, AiFillTwitterSquare } from "react-icons/ai";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -50,7 +50,7 @@ function Home() {
 
   const getDetailCard = (name) => {
     setDetailLoading(true)
-    ApiServices.get(`cardinfo.php?name=${name}`)
+    ApiServices.get('',`cardinfo.php?name=${name}`)
       .then((response) => {
         let detail = response.data.data
         setDetailKartu(detail)
@@ -138,7 +138,7 @@ function Home() {
       setModalShow(!modalShow)
       toast.dark(`SUMMON EXODIA !!!`, {
         position: "bottom-center",
-        autoClose: 10000,
+        autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -219,6 +219,28 @@ function Home() {
                 onHide={() => setModalShow(false)}
               />
 
+            </Container>
+
+            <Container className="my-3">
+              <Row>
+                <Col xs={12} sm={12} md={12} lg={12}>
+                  <div className="text-center">
+                    <a href="https://github.com/rbayuokt" target="_nblank" className="link">
+                      <AiFillGithub size={24} className="mr-2" />
+                    </a>
+                    <a href="http://linked.in/rbayuokt" target="_nblank" className="link">
+                      <AiFillLinkedin size={24} className="mr-2" />
+                    </a>
+                    <a href="https://www.facebook.com/RizkybayuCheater" target="_nblank" className="link">
+                      <AiFillFacebook size={24} className="mr-2" />
+                    </a>
+                    <a href="https://twitter.com/rbayuokt" target="_nblank" className="link">
+                      <AiFillTwitterSquare size={24} className="mr-2" />
+                    </a>
+                  </div>
+                  <p className="copy text-center mt-3">&copy; 2020 Rizky Bayu Oktavian</p>
+                </Col>
+              </Row>
             </Container>
           </>
           :
