@@ -50,7 +50,7 @@ function Home() {
 
   const getDetailCard = (name) => {
     setDetailLoading(true)
-    ApiServices.get('', `cardinfo.php?name=${name}`)
+    ApiServices.get(`cardinfo.php?name=${name}`)
       .then((response) => {
         let detail = response.data.data
         setDetailKartu(detail)
