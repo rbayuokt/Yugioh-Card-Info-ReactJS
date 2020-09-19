@@ -77,11 +77,12 @@ h2 {
   padding: 20px 20px;
   border-radius: 16px;
   transition: 0.3s;
+  box-sizing: border-box;
 }
 
 .card-yugi:hover{
-  border: 1px solid $blue;
-  transform: scale(1.1);
+  border: 2px solid $blue;
+  transform: scale(1.05);
 }
 
 .sticky-detail{
