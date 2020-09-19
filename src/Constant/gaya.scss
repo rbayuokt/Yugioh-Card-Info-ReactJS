@@ -58,11 +58,10 @@ h2 {
     color: $white !important;
   }
 }
-.icon-search{
+.icon-search {
   background-color: $blue-secondary;
   border-color: $blue-secondary;
 }
-
 
 //box
 .searchbox {
@@ -80,12 +79,12 @@ h2 {
   box-sizing: border-box;
 }
 
-.card-yugi:hover{
+.card-yugi:hover {
   border: 2px solid $blue;
   transform: scale(1.05);
 }
 
-.sticky-detail{
+.sticky-detail {
   // top: 110;
   height: 800px;
 }
@@ -97,7 +96,20 @@ h2 {
   font-family: $montserrat;
   font-weight: bold;
   font-size: 0.8rem;
-  padding: 10px 20px;
+  padding: 10px 24px;
+}
+
+.btn-outline-custom {
+  background-color: transparent;
+  color: $blue;
+  border: 1px solud $blue;
+  transition: 0.3s;
+}
+
+.btn-outline-custom:hover {
+  background-color: $blue;
+  color: $white;
+  border: 1px solud $blue;
 }
 
 .kartu-title {
@@ -142,3 +154,13 @@ h2 {
   font-weight: bold;
   padding: 10px 0;
 }
+
+//modal
+.modal {
+  background-color: #000;
+}
+
+.modal-content {
+  background-color: transparent;
+}
+

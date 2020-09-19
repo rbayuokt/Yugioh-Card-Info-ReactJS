@@ -6,10 +6,13 @@ import { Button, Row, Container, Col, Navbar, Form, FormControl, InputGroup } fr
 import { Link } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { AiOutlineSearch } from "react-icons/ai";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 //komponen
 import CardYugi from '../Component/CardYugi';
 import CardDetail from '../Component/CardDetail';
+import WhatTheFuckIsThis from '../Component/WhatTheFuckIsThis';
 
 function Home() {
 
@@ -23,6 +26,10 @@ function Home() {
   const [searchNotFound, setSearchNotFound] = useState([]);
 
   const [detailKartu, setDetailKartu] = useState([]);
+
+  //modal
+  const [modalShow, setModalShow] = useState(false)
+  const [wtf, setWtf] = useState([])
 
   useEffect(() => {
     getAllCard()
@@ -77,6 +84,21 @@ function Home() {
     }
   }
 
+  const getWtf = (data) => {
+    let temp = [...wtf];
+    temp.push(data)
+    setWtf(temp)
+    toast.dark(`👁️ Mengambil Kartu ${data}`, {
+      position: "bottom-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  }
+
   const scrollTopTop = () => {
     window.scrollTo({
       top: 0,
@@ -84,11 +106,54 @@ function Home() {
     });
   }
 
+  useEffect(() => {
+    console.log(wtf)
+    let tanganKiri = false;
+    let tanganKanan = false;
+    let kakiKiri = false;
+    let kakiKanan = false;
+    let kepala = false;
+
+    if (wtf.includes("Left Arm of the Forbidden One")) {
+      tanganKiri = true;
+    }
+
+    if (wtf.includes("Right Arm of the Forbidden One")) {
+      tanganKanan = true;
+    }
+
+    if (wtf.includes("Left Leg of the Forbidden One")) {
+      kakiKiri = true;
+    }
+
+    if (wtf.includes("Right Leg of the Forbidden One")) {
+      kakiKanan = true;
+    }
+
+    if (wtf.includes("Exodia the Forbidden One")) {
+      kepala = true;
+    }
+
+    if (tanganKiri && tanganKanan && kakiKiri && kakiKanan && kepala) {
+      setModalShow(!modalShow)
+      toast.dark(`SUMMON EXODIA !!!`, {
+        position: "bottom-center",
+        autoClose: 10000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  }, [wtf])
+
   return (
     <>
       {
         (!isLoading) ?
           <>
+            <ToastContainer />
             <Navbar bg="light" expand="lg" className="custom-nav" sticky="top">
               <Container>
                 <Col xs={12} md={4} lg={4}>
@@ -109,10 +174,10 @@ function Home() {
                     getSearchCard(searchText)
                   }
                   }
-                  className="d-flex align-items-center">
+                    className="d-flex align-items-center">
                     <InputGroup className="mb-3 my-auto">
                       <InputGroup.Prepend>
-                        <InputGroup.Text id="basic-addon1" className="icon-search"><AiOutlineSearch size={24}/> </InputGroup.Text>
+                        <InputGroup.Text id="basic-addon1" className="icon-search"><AiOutlineSearch size={24} /> </InputGroup.Text>
                       </InputGroup.Prepend>
                       <FormControl type="text" placeholder="Cari Kartu. . ." className="searchbox" onChange={(event) => setSearchText(event.target.value)} onBlur={() => getSearchCard(searchText)} />
                     </InputGroup>
@@ -135,7 +200,7 @@ function Home() {
                         return (
                           // <p>Wow</p>
                           <Col xs={12} sm={12} md={6} lg={4} className="my-3" key={index.toString()}>
-                            <CardYugi title={datana.name} type={datana.type} img={datana.card_images[0].image_url} onClick={() => getDetailCard(datana.name)} />
+                            <CardYugi title={datana.name} type={datana.type} img={datana.card_images[0].image_url} onClick={() => getDetailCard(datana.name)} onFav={() => getWtf(datana.name)} />
                           </Col>
                         )
                       })
@@ -149,6 +214,10 @@ function Home() {
                 </Col>
               </Row>
 
+              <WhatTheFuckIsThis
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+              />
 
             </Container>
           </>
@@ -161,11 +230,11 @@ function Home() {
                 </Col>
                 <Col xs={6} sm={6} md={8} lg={8}>
                   <Row className="mt-1">
-                    <Skeleton width={230} height={360} count={3} style={{ marginLeft: 20 , borderRadius:16 }} duration={2} />
+                    <Skeleton width={230} height={360} count={3} style={{ marginLeft: 20, borderRadius: 16 }} duration={2} />
                   </Row>
 
                   <Row className="mt-3">
-                    <Skeleton width={230} height={360} count={3} style={{ marginLeft: 20, borderRadius:16 }} duration={2} />
+                    <Skeleton width={230} height={360} count={3} style={{ marginLeft: 20, borderRadius: 16 }} duration={2} />
                   </Row>
 
                 </Col>
