@@ -72,7 +72,7 @@ function Home() {
           let detail = response.data.data
           setListKartu(detail)
           setDetailKartu([])
-          console.log(detail)
+          // console.log(detail)
           scrollTopTop()
         }).catch((error) => {
           setSearchNotFound(error.response.data)
@@ -107,7 +107,7 @@ function Home() {
   }
 
   useEffect(() => {
-    console.log(wtf)
+    // console.log(wtf)
     let tanganKiri = false;
     let tanganKanan = false;
     let kakiKiri = false;
@@ -247,3 +247,37 @@ function Home() {
 }
 
 export default Home;
+
+
+console.log(`%c
+...-''''''-...
+..-''     ....     ''-.
+..-'   ..--'''    ''''-..  '.
+.-'    ..'                  '.. '-.
+;    .-'                        '.  '-.
+'-.-'           .----..           '-.  '-...
+    .-''...... ''..          '-.    ''-........
+ .-'.-'';'    '... '-.          ''-...         ;
+.' .'  .'        '.'-. '-.             ''''--'''
+..-' .'    .              '.  '-..
+.' .-''      .          '     '-..  ''-..
+'.. ''--.      .         '         '-.... ''--..
+'''--.''-..  .      .'       .....---'       '''--..
+ '''-.;'''-..-'....--'''....--------------....'
+     :     ........---''
+     ;  ..:
+    .-  :',;
+  .'    : '.;
+   '.   :  ' .
+    '.  :  ' '
+     ;  :   ' '
+      : :    ' '
+      : :     ' '
+      ; :      ' '.                       .''.
+     :  :       '. '..                   :    ;
+     :  :         ''. '..                '.   ;
+      ; :            ''-.''-....          .  ;
+      : :                ''---..'''''----'.-'
+       '                        ''''''''''               
+
+THIS IS NOT THE EASTER EGG, FIND THE EASTER EGG !`, "color:red; font-size:18px");
