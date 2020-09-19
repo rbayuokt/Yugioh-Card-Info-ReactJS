@@ -4,20 +4,6 @@ class ApiService {
 
     static apiUrl = "https://db.ygoprodeck.com/api/v7/";
 
-    static login(username, password) {
-
-        var payload = {
-            "grant_type": "password",
-            "client_id": "2",
-            "client_secret": "FvQOgNH6DF8JJ3bSE7Ezuj7uwTlgGjvLDnsJpkE7",
-            "username": username,
-            "password": password
-        }
-
-        console.log(this.apiUrl + '/oauth/token');
-        return axios.post(this.apiUrl + '/oauth/token', payload)
-    }
-
     static post(token, url, payload) {
 
         return axios.post(this.apiUrl + url, payload, {
