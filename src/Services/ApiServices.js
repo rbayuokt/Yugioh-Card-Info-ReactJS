@@ -24,7 +24,7 @@ class ApiService {
 
     }
 
-    static get(token, url) {
+    static get(url) {
 
         return axios.get(this.apiUrl + url, {
             headers: {
