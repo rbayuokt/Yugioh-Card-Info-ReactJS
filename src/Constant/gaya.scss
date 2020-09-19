@@ -24,8 +24,13 @@ h2 {
 
 //scroll
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
+
+// :hover::-webkit-scrollbar{
+//   width: 4px;
+//   transition: 0.3s;
+// }
 
 /* Track */
 ::-webkit-scrollbar-track {
@@ -53,6 +58,11 @@ h2 {
     color: $white !important;
   }
 }
+.icon-search{
+  background-color: $blue-secondary;
+  border-color: $blue-secondary;
+}
+
 
 //box
 .searchbox {
@@ -66,6 +76,17 @@ h2 {
   background-color: $blue-secondary;
   padding: 20px 20px;
   border-radius: 16px;
+  transition: 0.3s;
+}
+
+.card-yugi:hover{
+  border: 1px solid $blue;
+  transform: scale(1.1);
+}
+
+.sticky-detail{
+  // top: 110;
+  height: 800px;
 }
 
 //kartu
@@ -74,7 +95,7 @@ h2 {
   color: $white;
   font-family: $montserrat;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 0.8rem;
   padding: 10px 20px;
 }
 

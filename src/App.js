@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Constant/gaya.scss';
+import './Constant/responsive.scss';
 import {
   BrowserRouter as Router,
-  Switch,
+  // Switch,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 
 //import screen
 import Home from './Screen/Home'
-import Detail from './Screen/Detail'
+// import Detail from './Screen/Detail'
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
     <>
       <Router>
         <Route path="/" exact component={Home} />
-        <Route path="/detail" exact component={Detail} />
+        {/* <Route path="/detail" exact component={Detail} /> */}
       </Router>
     </>
   );
