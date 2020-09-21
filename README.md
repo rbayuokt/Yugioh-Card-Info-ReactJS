@@ -22,4 +22,4 @@ ini merupakan aplikasi pertama saya dalam menggunakan reactJS
 **Easter Egg :**<br><br>
 <img src="screenshoot/2.gif" width="800px" /><br>
 
-made with :heart: in Cimahi by [@rbayuokt](https://www.instagram.com/rbayuokt/) :thumbsup:
+made with :heart: in Cimahi by [@rbayuokt](https://dribbble.com/rbayuokt_) :thumbsup:
