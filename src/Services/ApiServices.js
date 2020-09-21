@@ -6,7 +6,11 @@ class ApiService {
 
     static get(url) {
 
-        return axios.get(this.apiUrl + url)
+        return axios.get(this.apiUrl + url, {
+            headers: {
+                "Content-type": "application/json",
+            }
+        })
     }
 
 
