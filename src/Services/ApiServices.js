@@ -4,11 +4,10 @@ class ApiService {
 
     static apiUrl = "https://db.ygoprodeck.com/api/v7/";
 
-    static get(token,url) {
+    static get(url) {
 
         return axios.get(this.apiUrl + url, {
             headers: {
-                "Accept": "application/json",
                 "Content-type": "application/json",
             }
         })
