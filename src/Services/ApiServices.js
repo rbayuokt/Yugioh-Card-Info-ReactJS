@@ -2,13 +2,13 @@ import axios from 'axios';
 
 class ApiService {
 
-    static apiUrl = "https://db.ygoprodeck.com/api/v7/";
+    static apiUrl = "https://cors-anywhere.herokuapp.com/https://db.ygoprodeck.com/api/v7/";
 
     static get(url) {
 
         return axios.get(this.apiUrl + url, {
             headers: {
-                "Content-type": "application/json",
+                "X-Requested-With": "XMLHttpRequest",
             }
         })
     }
