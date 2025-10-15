@@ -45,6 +45,7 @@ here's the screenshoot of the apps that I made, hope you like it
 
 ## Contibutors
 * **Nenza Nurfirmansyah** - *Contributor* - [nenzan](https://github.com/nenzan)
+* **Ferdhika** - *Contributor* - [ferdhika31](https://github.com/ferdhika31)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
