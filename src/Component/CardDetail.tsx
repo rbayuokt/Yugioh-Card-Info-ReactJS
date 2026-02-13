@@ -4,7 +4,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 
-function CardDetail(props) {
+function CardDetail(props: any) {
     return (
         <div className="sticky-top custom-sticky overflow-auto sticky-detail" style={{ top: 110 }}>
             {
@@ -12,11 +12,6 @@ function CardDetail(props) {
                     <div className="d-flex flex-column">
                         <Zoom
                             zoomMargin={100}
-                            overlayBgColorEnd="#030343BF"
-                            style={{ cursor: "zoom-in" }}
-                            openText=""
-                            closeText=""
-                            wrapStyle={{marginLeft:'auto',marginRight:'auto',marginBottom:20,marginTop:20}}
                         >
                             <img src={props.detailKartu.length > 0 ? props.detailKartu[0].card_images[0].image_url : null} width="260" alt="" />
                         </Zoom>
@@ -25,7 +20,7 @@ function CardDetail(props) {
 
                         {
                             (props.detailKartu.length > 0) ?
-                                (props.detailKartu[0].type === "Monster" || props.detailKartu[0].type === "Effect Monster" | props.detailKartu[0].type === "Normal Monster") ?
+                                (props.detailKartu[0].type === "Monster" || props.detailKartu[0].type === "Effect Monster" || props.detailKartu[0].type === "Normal Monster") ?
                                     <div className="d-flex flex-row ">
                                         <div className="d-flex flex-row mr-4">
                                             <img src="/images/pedang.svg" width="24" alt="" />
@@ -97,7 +92,7 @@ function CardDetail(props) {
                         </div>
                     </div>
                     :
-                    <SkeletonTheme color="#2d325a" highlightColor="#444" className="d-flex flex-column">
+                    <SkeletonTheme highlightColor="#444">
                         <Skeleton height={380} width={260} className="align-self-center" />
                         <Skeleton className="mt-5" width={260} height={30} duration={2} />
                         <div className="mt-4"></div>
